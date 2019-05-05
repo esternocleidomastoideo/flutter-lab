@@ -1,22 +1,13 @@
-// This example shows a [Scaffold] with an [AppBar], a [BottomAppBar] and a
-// [FloatingActionButton]. The [body] is a [Text] placed in a [Center] in order
-// to center the text within the [Scaffold] and the [FloatingActionButton] is
-// centered and docked within the [BottomAppBar] using
-// [FloatingActionButtonLocation.centerDocked]. The [FloatingActionButton] is
-// connected to a callback that increments a counter.
 
 import 'package:flutter/material.dart';
 import 'package:herplin_beta/menu.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   // This widget i/**/s the root of your application.
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       title: 'Flutter Code Sample for material.Scaffold',
       theme: ThemeData(
@@ -28,43 +19,32 @@ class MyApp extends StatelessWidget {
 }
 
 class MyStatefulWidget extends StatefulWidget {
-  
-    MyStatefulWidget({Key key}) : super(key: key);
+
+  MyStatefulWidget({Key key}) : super(key: key);
 
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-
-  int _count = 0;
-
+  
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Menu().getMenu(this.context),    //constroi menu
+      drawer: Menu().getMenu(this.context),
+      //constroi menu
       appBar: AppBar(
-        title: Text('HERPLIN beta'),
+        title: Text('AppName'),
       ),
-      
       body: Center(
-
-        child: Text('Você have pressed the button $_count times.'),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50.0,
+        child: new Column(
+          children: [
+            Padding(padding: EdgeInsets.all(10.0)),
+            Expanded(child: Image.network('https://organicsnewsbrasil.com.br/wp-content/uploads/2015/10/Carrefour-c-logo.png',scale: 10,)),
+            Expanded(child: Image.network('https://organicsnewsbrasil.com.br/wp-content/uploads/2015/10/Carrefour-c-logo.png',scale: 10,)),
+            Expanded(child: Image.network('https://organicsnewsbrasil.com.br/wp-content/uploads/2015/10/Carrefour-c-logo.png',scale: 10,)),
+          ]        
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {
-              _count++;
-            }),
-        tooltip: 'Increment Counter',
-        child: Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
-
-    
   }
 }
